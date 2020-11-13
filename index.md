@@ -40,7 +40,9 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 {% for repository in orderedRepos %}
 {% assign homepageLength = repository.homepage | size %}
 {% if homepageLength > 0 %}
-### {{NewsSentiment}} | [repo]({{ https://github.com/EricaWei053/NewsSentiment }}) | [pages]({{ repository.homepage }}) 
+### {{repository.name}} | [repo]({{ repository.html_url }}) | [pages]({{ repository.homepage }}) 
+{% else %}
+### {{repository.name}} | [repo]({{ repository.html_url }})
 {% endif %}
 <div style="border-left: 3px solid #CCC; padding-left: 10px; margin-bottom: 30px">
 <i>{{repository.description}}</i>
@@ -48,3 +50,4 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 </div>
 
 {% endfor %}
+
